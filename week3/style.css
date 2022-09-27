@@ -1,0 +1,64 @@
+body {
+    background-color: rgb(231, 225, 214);
+    font-family: "Roboto";
+    font-weight: 400;
+    text-align: center;
+}
+
+h1 {
+    color: #1050aa;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    size: 2.2em;
+}
+
+header {
+    border-bottom: 2px dotted darkslateblue;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+#firstp {
+    font-weight: bold;
+}
+
+.education.ed {
+    border: 2px dashed;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.education.list:first-child{
+    font-style: italic;
+}
+header a:last-of-type {
+    margin-left: 20px;
+}
+
+.experience {
+    border: 2px dashed;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+a[href="https://github.com"]:hover {
+    color: crimson;  
+}
+.skills.ul{
+    list-style: none;
+}
+
+h2::first-letter {
+    font-size: 3rem;
+}
+
+a[href="https://github.com"]::after {
+    content: url("images/GitHub-Mark-32px.png");
+
+}
+
+.education .education-list li:first-of-type {
+    font-style: italic;
+}
+
+.skills li{
+    list-style-type: none;
+}
