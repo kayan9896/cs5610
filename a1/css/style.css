@@ -1,0 +1,28 @@
+body {
+    background-image: url("../images/bg.jpg") ;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0; 
+    padding: 0;
+    height: 80vh;
+    width: 80vw;
+    font-family: "Roboto";
+    text-align: justify;
+   }
+nav
+   {
+      text-align: center;
+      background-color: #c0c9c4;
+      width: 100vw;
+      margin: 0; 
+   }
+
+a:visited{
+   color: green;
+}
+.asrow { display:inline-block; padding:18px;  }
+.para{
+   padding: 5%;
+   padding-top: 0;
+   font-weight: bold;
+}
