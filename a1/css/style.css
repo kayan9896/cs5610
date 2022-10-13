@@ -21,7 +21,12 @@ nav
       top:0;
       
    }
-
+button{
+   background: transparent;
+   position: absolute;
+   top:0;
+   right:0;
+}
 a:visited{
    color: green;
 }
@@ -34,5 +39,8 @@ a:visited{
 .darkmode{
    background-image: url("../images/bg.jpg"),linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) ;
    background-blend-mode: overlay;
+   color: white;
+}
+.darkbut{
    color: white;
 }
