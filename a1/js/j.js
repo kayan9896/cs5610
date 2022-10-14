@@ -1,5 +1,5 @@
 const btn = document.querySelector("#dl");
-const tbtn=document.querySelector("section");
+const tbtn=document.querySelector("button");
 const txt=document.querySelector("#log");
 
 let de=localStorage.getItem("default");
@@ -23,11 +23,13 @@ function changeBackground() {
   
 }
 function displayDateTime(){
-  console.log(this.value);
-  if(this.value=="tm"){
-    const d=new Date();
-    log.innerText=d.getTime();
-  }else{log.innerText=Date.now()}
+  let v=document.querySelector('input[name="datetime"]:checked').value;
+  const d=new Date();
+  if(v=="tm"){
+    log.innerText=d.toLocaleTimeString()
+  }else{
+    log.innerText=d.toDateString();
+  }
 }
 
 btn.addEventListener('click', changeBackground);
