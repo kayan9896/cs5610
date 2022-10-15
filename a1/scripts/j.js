@@ -26,7 +26,7 @@ function displayDateTime(){
   let v=document.querySelector('input[name="datetime"]:checked').value;
   const d=new Date();
   if(v=="tm"){
-    log.innerText=d.toLocaleTimeString();
+    log.innerText=d.toLocaleTimeString('en-US');
     setTimeout(displayDateTime, 1000);
   }else{
     log.innerText=d.toDateString();
