@@ -1,0 +1,55 @@
+body {
+    background-image: url("../images/bg.jpg") ;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0; 
+    padding: 0;
+    height: 80vh;
+    width: 80vw;
+    font-family: "Roboto";
+    text-align: justify;
+   }
+nav
+   {
+      text-align: center;
+      background-color: #c0c9c4;
+      width: 100vw;
+      margin: 0; 
+      position: sticky; 
+      top:0;
+   }
+section{
+   padding-left: 2%;
+}
+.navul{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+   list-style: none;
+   padding: 18px;
+   padding-right: 30%;
+   padding-left: 30%;
+}
+.buttond{
+   background: transparent;
+   position: absolute;
+   top:0;
+   right:0;
+}
+a:visited{
+   color: green;
+}
+.asrow { display:inline-block; padding:18px;  }
+.para{
+   padding: 4%;
+   padding-top: 0;
+   font-weight: bold;
+}
+.darkmode{
+   background-image: url("../images/bg.jpg"),linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) ;
+   background-blend-mode: overlay;
+   color: white;
+}
+.darkbut{
+   color: white;
+}
