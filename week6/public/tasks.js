@@ -6,6 +6,7 @@ router.get("/tasks", function (req, res) {
   });
 router.get("/tasks/:ID/seconds/:id2", function (req, res) {
     //res.send('tasks'+req.params.ID+'second'+req.params.id2);
+    //res.render('t',{id:req.params.ID});
     axios
     .get('https://jsonplaceholder.typicode.com/todos/'+req.params.ID)
     .then(function (response) {
