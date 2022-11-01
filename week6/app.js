@@ -16,6 +16,13 @@
 const express=require('express');
 const app = express();
 const port = 3000;
+app.use(express.static('public'));
+app.use(express.json());
+app.use(express.urlencoded());
+const tjs=require('./public/tasks');
+app.use("/api/tasks",tjs);
+app.set('views','./');
+app.set("view engine","pug");
 
 // app.get("/", function (req, res) {
 //   res.send("Hello World!");
@@ -26,14 +33,13 @@ const port = 3000;
 // app.get("/tasks/:ID/second/:id2", function (req, res) {
 //     res.send('tasks'+req.params.ID+'second'+req.params.id2);
 //   });
+const db=require('./db');
+
 app.listen(port, function () {
   console.log(`Example app listening on port ${port}!`);
+  db.connectdb();
 });
-app.use(express.static('public'));
-const tjs=require('./public/tasks');
-app.use(tjs);
-app.set('views','./');
-app.set("view engine","pug");
+
 
 
 
@@ -80,12 +86,16 @@ const axios=require("axios");
 //       console.log(err);
 //     })
 // })
-tjs.get("/tasks/:ID", async function (req, res){
-  try{
-    const rp=await axios.get("https://jsonplaceholder.typicode.com/todos/"+req.params.ID);
-    res.render('t',{id:rp.data.title});
-    //res.status(rp.status).json(rp.data);
-  }catch(err){
-    console.log(err);
-  }
-});
+// tjs.get("/tasks/:ID", async function (req, res){
+//   try{
+//     const rp=await axios.get("https://jsonplaceholder.typicode.com/todos/"+req.params.ID);
+//     res.render('t',{id:rp.data.title});
+//     //res.status(rp.status).json(rp.data);
+//   }catch(err){
+//     console.log(err);
+//   }
+// });
+
+
+
+//db.addtodb({name:'one'});
