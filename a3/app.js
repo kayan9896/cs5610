@@ -37,5 +37,11 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-
+const db=require('./db');
+const port=3001;
+app.listen(port, function () {
+  console.log(`Example app listening on port ${port}!`);
+  db.connectdb();
+});
+//db.updatedb('q',{Dish:'Pizza'})
 module.exports = app;
