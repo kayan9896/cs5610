@@ -4,16 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel='stylesheet', href='/stylesheets/style.css'>
+    <title>Add</title>
 </head>
 <body>
     <form action="/" method="post">
-        <label for="Dish">Enter Dish Title: </label>
-        <input id="Dish" type="text" name="Dish" >
-        <label for="date">Enter Ingredient: </label>
-        <input id="date" type="text" name="Ingredient" >
-        <label for="date">Enter Comment: </label>
-        <input id="date" type="text" name="Comment" >
+        <div>  
+            <label for="Dish"> Dish Title: </label>
+            <input id="Dish" type="text" name="Dish" required='true'>
+        </div>
+        <div>
+            <label for="date"> Ingredient: </label>
+            <input id="date" type="text" name="Ingredient" required="true" >
+        </div>
+        <div>
+            <label for="date"> IMGlink: </label>
+            <input id="date" type="text" name="IMGlink" required='true'>
+        </div>
+        <div>
+            <label for="date"> Comment: </label>
+            <input id="date" type="text" name="Comment" required='true'>
+        </div>
         
         <input type="submit" value="Submit">
     </form>

@@ -11,7 +11,9 @@ body
       div.form-group
         label(for='author') Ingredient:
         input#author.form-control(type='text', placeholder='Ingredient' name='Ingredient' required='true' value=`${info.Ingredient}` )
-        
+      div.form-group
+        label(for='author') IMGlink:
+        input#author.form-control(type='text', placeholder='IMGlink' name='IMGlink' required='true' value=`${info.IMGlink}` )  
       div.form-group
         label(for='summary') Comment:
         textarea#summary.form-control(type='textarea', placeholder='Comment' name='Comment' required='true' value=`${info.Comment}`)
