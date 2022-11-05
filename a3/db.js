@@ -26,15 +26,15 @@ module.exports.readdb = async () => {
 }
 module.exports.getone = async (n) => {
     try {
-        const dat = await c.db('cuisine').collection('food').findOne({Dish:n});
-        //console.log(dat);
+        const dat = await c.db('cuisine').collection('food').findOne({_id:mdb.ObjectId(n)});
+        //console.log(mdb.ObjectId(n));
         return dat;
     }
     catch (e) { console.log(e); }
 }
-module.exports.updatedb = async (o,n) => {
+module.exports.updatedb = async (cuisineId,pair) => {
     try {
-        const dat = await c.db('cuisine').collection('food').updateOne({ Dish: o }, { $set: n });
+        const dat = await c.db('cuisine').collection('food').updateMany({_id:mdb.ObjectId(cuisineId)}, { $set: pair });
         console.log(`${dat.matchedCount}  matched.`);
         console.log(`${dat.modifiedCount}  updated.`);
     }
@@ -42,7 +42,7 @@ module.exports.updatedb = async (o,n) => {
 }
 module.exports.deletedb = async (n) => {
     try {
-        const dat = await c.db('cuisine').collection('food').deleteOne({ Dish: n });
+        const dat = await c.db('cuisine').collection('food').deleteOne({_id:mdb.ObjectId(n)});
         console.log(`${dat.deletedCount}  matched.`);
     }
     catch (e) { console.log(e); }

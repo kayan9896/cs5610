@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+head
+    title Update #{info.Dish}
+    script(type='text/javascript', src='/javascripts/t.js')
+body  
+    form(method='POST' action=`${info._id}`)
+      div.form-group
+        label(for='title') Dish:
+        input#title.form-control(type='text', placeholder='Dish' name='Dish' required='true' value=`${info.Dish}` )
+      div.form-group
+        label(for='author') Ingredient:
+        input#author.form-control(type='text', placeholder='Ingredient' name='Ingredient' required='true' value=`${info.Ingredient}` )
+        
+      div.form-group
+        label(for='summary') Comment:
+        textarea#summary.form-control(type='textarea', placeholder='Comment' name='Comment' required='true' value=`${info.Comment}`)
+      
+      input(type='submit', value='Submit')

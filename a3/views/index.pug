@@ -4,10 +4,10 @@ head
     title= "Task Details"
     script(type='text/javascript', src='/javascripts/t.js')
 body  
-    a(href='../index2.html') add
+    a(href='../add.html') add
     for item in results
       div
         li Dish: #{item.Dish}
         li Ingredient: #{item.Ingredient}
-        a(href='/'+`${item.Dish}`) view
+        a(href='/'+`${item._id}`) view
         li

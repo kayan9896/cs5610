@@ -4,8 +4,9 @@ head
     title #{info.Dish}
     script(type='text/javascript', src='/javascripts/t.js')
 body  
-    a(href='../index2.html') edit
-    a(href='delete/'+`${info.Dish}`) delete
+    a(href='/') main
+    a(href='update/'+`${info._id}`) edit
+    a(href='delete/'+`${info._id}`) delete
     li Dish: #{info.Dish}
     li Ingredient: #{info.Ingredient}
     li Comment: #{info.Comment}
