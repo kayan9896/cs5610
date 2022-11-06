@@ -12,7 +12,7 @@ router.get('/', async function(req, res, next) {
     console.log(e);
   }
 });
-router.get('/listall', async function(req, res, next) {
+router.get('/i/listall', async function(req, res, next) {
   try{
     const dt=await readdb();
     //console.log(dt);
@@ -22,7 +22,7 @@ router.get('/listall', async function(req, res, next) {
     console.log(e);
   }
 });
-router.get('/:cuisineId', async function(req, res, next) {
+router.get('/i/:cuisineId', async function(req, res, next) {
   try{
     const dt=await getone(req.params.cuisineId);
     //console.log(dt);
@@ -32,7 +32,7 @@ router.get('/:cuisineId', async function(req, res, next) {
     console.log(e);
   }
 });
-router.get('/delete/:cuisineId',async function(req,res){
+router.get('/i/delete/:cuisineId',async function(req,res){
   try{
     await deletedb(req.params.cuisineId);
     res.redirect('/');
@@ -40,7 +40,7 @@ router.get('/delete/:cuisineId',async function(req,res){
     console.log(e)
   }
 })
-router.get('/update/:cuisineId',async function(req,res){
+router.get('/i/update/:cuisineId',async function(req,res){
   try{
     const dt=await getone(req.params.cuisineId);
     //console.log(dt);
@@ -49,7 +49,7 @@ router.get('/update/:cuisineId',async function(req,res){
     console.log(e)
   }
 })
-router.post('/update/:cuisineId',
+router.post('/i/update/:cuisineId',
   body('Dish').isLength({ min: 1 }),
   body('Ingredient').isLength({ min: 1 }),
   body('IMGlink').isLength({ min: 1 }),
@@ -61,7 +61,7 @@ router.post('/update/:cuisineId',
     try{
       //console.log(req.body)
       await updatedb(req.params.cuisineId,req.body);
-      res.redirect('/'+`${req.params.cuisineId}`);}
+      res.redirect('/i/'+`${req.params.cuisineId}`);}
     catch(e){
       console.log(e);
     }
