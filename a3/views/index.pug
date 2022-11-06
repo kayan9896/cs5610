@@ -5,7 +5,9 @@ head
     link(rel='stylesheet', href='/stylesheets/style.css')
 body
   h1 Recipe Collections  
-  a(href='../add.html') Add
+  nav
+    a(href='../add.html') Add  Cuisine 
+    a(href='/listall')  List  All  In  Json
   main
     for item in results
       div

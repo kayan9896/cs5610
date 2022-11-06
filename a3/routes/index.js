@@ -1,12 +1,23 @@
 var express = require('express');
 var router = express.Router();
 const { addtodb,readdb,getone,deletedb,updatedb } = require("../db");
+const { body, validationResult } = require('express-validator');
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
   try{
     const dt=await readdb();
     res.render('index',{results:dt})
+  }catch(e){
+    console.log(e);
+  }
+});
+router.get('/listall', async function(req, res, next) {
+  try{
+    const dt=await readdb();
+    //console.log(dt);
+    res.json(dt);
+    
   }catch(e){
     console.log(e);
   }
@@ -20,7 +31,6 @@ router.get('/:cuisineId', async function(req, res, next) {
   }catch(e){
     console.log(e);
   }
-  
 });
 router.get('/delete/:cuisineId',async function(req,res){
   try{
@@ -40,9 +50,9 @@ router.get('/update/:cuisineId',async function(req,res){
   }
 })
 router.post('/update/:cuisineId',async function(req,res){
+  
   try{
-    console.log(req.body)
-    console.log(req.body[0])
+    //console.log(req.body)
     await updatedb(req.params.cuisineId,req.body);
     res.redirect('/'+`${req.params.cuisineId}`);}
   catch(e){
@@ -51,7 +61,7 @@ router.post('/update/:cuisineId',async function(req,res){
 })
 router.post('/',async function(req,res){
   try{
-    console.log(req.body)
+    //console.log(req.body)
     await addtodb(req.body);
     res.redirect('/');}
   catch(e){
