@@ -49,15 +49,22 @@ router.get('/update/:cuisineId',async function(req,res){
     console.log(e)
   }
 })
-router.post('/update/:cuisineId',async function(req,res){
-  
-  try{
-    //console.log(req.body)
-    await updatedb(req.params.cuisineId,req.body);
-    res.redirect('/'+`${req.params.cuisineId}`);}
-  catch(e){
-    console.log(e);
-  }
+router.post('/update/:cuisineId',
+  body('Dish').isLength({ min: 1 }),
+  body('Ingredient').isLength({ min: 1 }),
+  body('IMGlink').isLength({ min: 1 }),
+  body('Comment').isLength({ min: 1 }),
+  async function(req,res){
+    console.log(req.body.IMGlink);
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {return res.status(400).json({ errors: errors.array() });}
+    try{
+      //console.log(req.body)
+      await updatedb(req.params.cuisineId,req.body);
+      res.redirect('/'+`${req.params.cuisineId}`);}
+    catch(e){
+      console.log(e);
+    }
 })
 router.post('/',async function(req,res){
   try{

@@ -56,5 +56,5 @@ main{
   grid-template-columns: repeat(3,1fr);
   row-gap: 5%;
   column-gap: 5%;
-  padding-bottom: 5%;
+  padding-bottom: 10%;
 }
