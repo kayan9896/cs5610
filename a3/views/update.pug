@@ -4,18 +4,23 @@ head
     title Update #{info.Dish}
     script(type='text/javascript', src='/javascripts/t.js')
 body  
+    h2 Update Cuisine
     form(method='POST' action=`${info._id}`)
       div.form-group
         label(for='title') Dish:
-        input#title.form-control(type='text', placeholder='Dish' name='Dish' required='true' value=`${info.Dish}` )
+      div
+        input#puginput.form-control(type='text', placeholder='Dish' name='Dish' required='true' value=`${info.Dish}` style='width:100%')
       div.form-group
         label(for='author') Ingredient:
-        input#author.form-control(type='text', placeholder='Ingredient' name='Ingredient' required='true' value=`${info.Ingredient}` )
+      div
+        input#puginput.form-control(type='text', placeholder='Ingredient' name='Ingredient' required='true' value=`${info.Ingredient}` style='width:100%')
       div.form-group
         label(for='author') IMGlink:
-        input#author.form-control(type='text', placeholder='IMGlink' name='IMGlink' required='true' value=`${info.IMGlink}` )  
+      div
+        input#puginput.form-control(type='text', placeholder='IMGlink' name='IMGlink' required='true' value=`${info.IMGlink}` style='width:100%')  
       div.form-group
         label(for='summary') Comment:
-        textarea#summary.form-control(type='textarea', placeholder='Comment' name='Comment' required='true' value=`${info.Comment}`)
+      div
+        textarea#txtarea.form-control(type='textarea', placeholder='Comment' name='Comment' required='true' style='width:100%; height:200px') #{info.Comment}
       
       input(type='submit', value='Submit')
