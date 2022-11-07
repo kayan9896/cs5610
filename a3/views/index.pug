@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+head
+    title= "Main Page"
+    link(rel='stylesheet', href='/stylesheets/style.css')
+body
+  h1 Recipe Collections  
+  nav
+    a(href='../add.html') Add  Cuisine 
+    a(href='i/listall')  List  All  In  Json
+  main
+    for item in results
+      div
+        a(href='/i/'+`${item._id}`,class='card')
+          h3 #{item.Dish}
+          img(src=`${item.IMGlink}`)
+          li Ingredient: #[br]#{item.Ingredient}
+  footer
+    small &copy; Copyright 2022, Corporation
+        
+        

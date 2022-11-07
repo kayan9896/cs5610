@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+head
+    title #{info.Dish}
+    link(rel='stylesheet', href='/stylesheets/style.css')
+body
+    nav
+        li #[a(href='/') Main Page]
+        li #[a(href='update/'+`${info._id}`) Edit Cuisine]
+        li #[a(href='delete/'+`${info._id}`) Delete Cuisine]
+    div(class='descri')
+        h2 #{info.Dish}
+        img(src=`${info.IMGlink}`, class='resize')
+        li Ingredient: #{info.Ingredient}
+        li Comment: #{info.Comment}
